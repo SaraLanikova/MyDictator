@@ -1,0 +1,16 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+    <p>
+        {% if player.id_in_group == 1 and group.computer_decided == 1 %}
+            The computer decided that you will keep <strong>{{ group.kept }}</strong> and Participant 2 will get {{ offer }}.
+
+        {% elif player.id_in_group == 1 and group.computer_decided == 0 %}
+            You decided to keep <strong>{{ group.kept }}</strong>, so the Participant 2 got <strong>{{ offer }}</strong>.
+
+        {% elif player.id_in_group == 2 %}
+            It has been decided that Participant 1 will keep {{ group.kept }}, so you got <strong>{{ offer }}</strong>.
+        {% endif %}
+
+        {{ next_button }}
+    </p>
+{{ endblock }}

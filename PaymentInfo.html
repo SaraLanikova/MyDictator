@@ -1,0 +1,25 @@
+{{ block title }}Thank You!{{ endblock }}
+{{ block content }}
+
+    <p>
+        <em>Thank you for participating!</em>
+    </p>
+
+    <p>
+       {% if player.id_in_group == 1 and group.computer_decided == 1 %}
+            Your earnings are <strong>{{ group.kept }}</strong>.
+
+        {% elif player.id_in_group == 1 and group.computer_decided == 0 %}
+            Your earnings are <strong>{{ group.kept }}</strong>.
+
+        {% elif player.id_in_group == 2 %}
+            Your earnings are <strong>{{ player.payoff }}</strong>.
+        {% endif %}
+    </p>
+
+    <p>Please remain seated until your number is called. Then take your number card, and proceed to the cashier.</p>
+
+
+{{ endblock }}
+
+

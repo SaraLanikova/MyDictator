@@ -1,0 +1,19 @@
+{{ block title }}Your Decision{{ endblock }}
+{{ block content }}
+<style>
+    .otree-timer {
+        display: none;
+    }
+</style>
+
+    <p>
+        You are <strong>Participant {{player.id_in_group}}</strong>.
+        Please decide how much of the {{ C.ENDOWMENT }}
+        you will keep for yourself. The rest will get the Participant 2.
+    </p>
+
+    {{ formfields }}
+
+    {{ next_button }}
+
+{{ endblock }}
